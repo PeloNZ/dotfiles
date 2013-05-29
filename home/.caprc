@@ -1,0 +1,55 @@
+require 'colored'
+#capistrano_color_matchers = [
+#  { :match => /executing/, :color => :hide,      :prio => 10 },
+#  { :match => /command finished/, :color => :green,      :prio => 10 },
+#  { :match => /servers/, :color => :white,      :prio => 10, :attribute => :dim },
+#]
+#
+#colorize( capistrano_color_matchers )
+logger.level = Logger::DEBUG # or Capistrano::Logger::IMPORTANT
+## spinner stuff
+#@spinner_running = false
+#@chars = ['|', '/', '-', '\\']
+#@spinner = Thread.new do
+#loop do
+#unless @spinner_running
+#Thread.stop
+#end
+#  print @chars[0]
+#sleep(0.1)
+#  print "\b"
+#  @chars.push @chars.shift
+#  end
+#  end
+#
+#  def start_spinner
+#  @spinner_running = true
+#  @spinner.wakeup
+#  end
+#
+## stops the spinner and backspaces over last displayed character
+#  def stop_spinner
+#  @spinner_running = false
+#  print "\n"
+#  end
+
+  STDOUT.sync
+  before "deploy:update_code" do
+  print "Updating Code........"
+#start_spinner()
+  end
+
+  after "deploy:update_code" do
+#stop_spinner()
+  puts "Done.".green
+  end
+
+  before "deploy:cleanup" do
+  print "Cleaning Up.........."
+#start_spinner()
+  end
+
+  after "deploy:update_code" do
+#stop_spinner()
+  puts "Done.".green
+  end
