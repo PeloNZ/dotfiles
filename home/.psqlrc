@@ -1,0 +1,12 @@
+\pset null '¤'
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTSIZE 10000
+\timing
+-- \set PROMPT1 '%[%033[0;36;29m%]%n@%m:%/%[%033[0m%]%# '
+-- \set PROMPT1 '%[%033[33;1m%]%x%[%033[0m%]%[%033[1m%]%/%[%033[0m%]%R%# '
+-- \set PROMPT2 ''
+-- \set PROMPT1 '%n@%/\n%R%x%# '
+-- \set PROMPT2 '%R%x%# '
+\encoding unicode
+\pset border 2
+-- \pset linestyle unicode
