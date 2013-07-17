@@ -55,7 +55,7 @@ if [ "$color_prompt" = yes ]; then
         [[ $(__git_ps1) != "" ]] && [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
     }
 
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\t \[\033[01;31m\][\!]\[\033[01;32m\] (\u) \[\033[01;34m\]\w\[\033[01;32m\]$(__git_ps1 " %s")\[\033[01;34m\]\[\033[01;31m\] >\[\033[00m\] '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\t \[\033[01;31m\][\!]\[\033[01;32m\] (\u@\h) \[\033[01;34m\]\w\[\033[01;32m\]$(__git_ps1 " %s")\[\033[01;34m\]\[\033[01;31m\] >\[\033[00m\] '
 
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -84,19 +84,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias rgrep='grep -rni --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias g='git'
-
-# vim aliases
-alias v='vim'
-alias vs='sudo vim'
-alias eh='sudo vim /etc/hosts'
-
-# apt aliases
-alias sagi='sudo apt-get install'
 
 # debianise a git repo
 export DEBFULLNAME='Chris Wharton'
@@ -118,8 +105,14 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# git bash completion script from git core
+if [ -f ~/.git-completion.bash ] && ! shopt -oq posix; then
+    source ~/.git-completion.bash
+fi
+
 export PERL_LOCAL_LIB_ROOT="/home/chrisw/perl5";
 export PERL_MB_OPT="--install_base /home/chrisw/perl5";
 export PERL_MM_OPT="INSTALL_BASE=/home/chrisw/perl5";
 export PERL5LIB="/home/chrisw/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/chrisw/perl5/lib/perl5";
 export PATH="/home/chrisw/perl5/bin:$PATH";
+export PATH="$PATH:$HOME/dev/git-achievements"

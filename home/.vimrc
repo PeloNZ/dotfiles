@@ -52,6 +52,8 @@ augroup myfiletypes
     autocmd!
     " autoindent with two spaces, always expand tabs
     autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+    " Set Ruby for certain non .rb files
+      autocmd BufNewFile,BufReadPost .autotest,*.watchr,Guardfile,Capfile,Cheffile setfiletype ruby
 augroup END
 
 if exists('mutt_mode')

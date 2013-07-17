@@ -8,8 +8,10 @@
     log = auto
     status = auto
 [core]
-    autocrlf = false
+	autocrlf = input
 	filemode = false
+	attributesfile = ~/.gitattributes
+    logallrefupdates = true
 [alias]
     wtf = !git-wtf
     undo = reset --hard
@@ -33,8 +35,25 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	pup = push private
     rem = remote -v
+    dft = difftool
+    cp = cherry-pick
+	open = !sh ~/bin/open.sh
+	eu = edit-unmerged
 
 [push]
 	default = current
 [pack]
 	threads = 0
+[diff "image"]
+	command = ~/bin/git-imgdiff
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[log]
+    decorate = full
+[branch]
+    rebase = true
+    autosetuprebase = always
+[achievement]
+	upload = true
