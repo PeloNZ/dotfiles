@@ -57,3 +57,9 @@
     autosetuprebase = always
 [achievement]
 	upload = true
+[init]
+	templatedir = ~/.git_template
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
