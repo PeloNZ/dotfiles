@@ -27,8 +27,8 @@
     ci = commit
     br = branch
     co = checkout
-    df = diff
-    dfc = diff --cached
+    df = diff --ignore-all-space
+    dfc = diff --cached --ignore-all-space
     who = shortlog -s --
     alias = !sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
