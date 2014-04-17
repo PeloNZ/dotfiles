@@ -12,9 +12,10 @@
 	filemode = false
 	attributesfile = ~/.gitattributes
     logallrefupdates = true
+	eol = lf
 [alias]
     wtf = !git-wtf
-    undo = reset --hard
+    undo = git stash && git reset --hard
     wipe = clean -f -d
     prune-all = !git remote | xargs -n 1 git remote prune
     whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
@@ -33,15 +34,17 @@
     alias = !sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	pup = push private
     rem = remote -v
     dft = difftool
-    cp = cherry-pick
+    chp = cherry-pick
 	open = !sh ~/bin/open.sh
 	eu = edit-unmerged
+	push-26 = push gerrit HEAD:refs/for/mdl26-topnz-dev
+	push-23 = push gerrit HEAD:refs/for/mdl23-topnz-dev
+	draft-23 = push gerrit HEAD:refs/drafts/mdl23-topnz-dev
 
 [push]
-	default = current
+	default = tracking
 [pack]
 	threads = 0
 [diff "image"]
@@ -63,3 +66,7 @@
     log = diff-highlight | less
     show = diff-highlight | less
     diff = diff-highlight | less
+[help]
+	autocorrect = 1
+[merge]
+	renamelimit = 999999

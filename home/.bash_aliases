@@ -3,6 +3,7 @@ alias versionbump='dch --distribution unstable --upstream --increment'
 alias s='sudo'
 alias cddd='cd ~/dev/deploy'
 alias ver="grep '\$release\|^\$TOTARA->version\|->version' version.php"
+alias ack="ack-grep"
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -23,3 +24,5 @@ alias eh='sudo vim /etc/hosts'
 # apt aliases
 alias sagi='sudo apt-get install'
 
+# When using sudo, use alias expansion (otherwise sudo ignores your aliases)
+alias sudo='sudo '

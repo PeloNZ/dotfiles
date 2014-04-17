@@ -1,4 +1,6 @@
 require 'colored'
+
+logger.level = Logger::DEBUG # or Capistrano::Logger::IMPORTANT
 #capistrano_color_matchers = [
 #  { :match => /executing/, :color => :hide,      :prio => 10 },
 #  { :match => /command finished/, :color => :green,      :prio => 10 },
@@ -6,7 +8,6 @@ require 'colored'
 #]
 #
 #colorize( capistrano_color_matchers )
-logger.level = Logger::DEBUG # or Capistrano::Logger::IMPORTANT
 ## spinner stuff
 #@spinner_running = false
 #@chars = ['|', '/', '-', '\\']

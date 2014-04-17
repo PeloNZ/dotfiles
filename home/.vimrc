@@ -14,6 +14,8 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 
+set tabpagemax=20
+
 set textwidth=0
 
 set wildmode=longest,list
@@ -134,6 +136,7 @@ endif
 
 " status line
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+set laststatus=2
 
 " look for etags
 set tags=tags;/
@@ -151,3 +154,7 @@ nnoremap <silent> <S-F7> :BufExplorer<CR>
 highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
+
+" difftool: ignore whitespace changes
+set diffopt+=iwhite
+set diffexpr=""
