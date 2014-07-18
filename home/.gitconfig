@@ -1,5 +1,5 @@
 [user]
-    email = chrisw@catalyst.net.nz
+    email = chris.wharton@catalyst-eu.net
     name = Chris Wharton
 [color]
     ui = auto
@@ -63,9 +63,9 @@
 [init]
 	templatedir = ~/.git_template
 [pager]
-    log = diff-highlight | less
-    show = diff-highlight | less
-    diff = diff-highlight | less
+#    log = diff-highlight | less
+#    show = diff-highlight | less
+#    diff = diff-highlight | less
 [help]
 	autocorrect = 1
 [merge]
