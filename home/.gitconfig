@@ -16,7 +16,7 @@
 [alias]
     wtf = !git-wtf
     undo = git stash && git reset --hard
-    wipe = clean -f -d
+#    wipe = clean -f -d
     prune-all = !git remote | xargs -n 1 git remote prune
     whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
     whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
@@ -59,7 +59,7 @@
     rebase = true
     autosetuprebase = always
 [achievement]
-	upload = true
+#	upload = true
 [init]
 	templatedir = ~/.git_template
 [pager]
