@@ -11,9 +11,6 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # git aliases
-alias g='git-achievements'
-alias git='git-achievements'
-alias gti='git-achievements'
 alias gpast='for k in `git branch -r|sed s/^..//`;do echo -e `git log -1 --date=short --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" "$k" --`\\t"$k";done|sort'
 
 # vim aliases
