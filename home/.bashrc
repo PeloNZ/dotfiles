@@ -115,4 +115,4 @@ export PERL_MB_OPT="--install_base /home/chrisw/perl5";
 export PERL_MM_OPT="INSTALL_BASE=/home/chrisw/perl5";
 export PERL5LIB="/home/chrisw/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/chrisw/perl5/lib/perl5";
 export PATH="/home/chrisw/perl5/bin:$PATH";
-export PATH="$PATH:$HOME/dev/git-achievements"
+#export PATH="$PATH:$HOME/dev/git-achievements"

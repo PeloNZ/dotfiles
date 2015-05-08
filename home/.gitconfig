@@ -8,7 +8,7 @@
     log = auto
     status = auto
 [core]
-	autocrlf = input
+#	autocrlf = input
 	filemode = false
 	attributesfile = ~/.gitattributes
     logallrefupdates = true
@@ -51,6 +51,7 @@
 	command = ~/bin/git-imgdiff
 [diff]
     tool = vimdiff
+	submodule = log
 [difftool]
     prompt = false
 [log]
@@ -63,10 +64,16 @@
 [init]
 	templatedir = ~/.git_template
 [pager]
-#    log = diff-highlight | less
-#    show = diff-highlight | less
-#    diff = diff-highlight | less
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
 [help]
 	autocorrect = 1
 [merge]
 	renamelimit = 999999
+	tool = vimdiff
+	conflictstyle = diff3
+[status]
+	submodulesummary = 0
+[mergetool]
+	prompt = false
