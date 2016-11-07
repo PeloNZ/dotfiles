@@ -42,6 +42,7 @@
 	push-26 = push gerrit HEAD:refs/for/mdl26-topnz-dev
 	push-23 = push gerrit HEAD:refs/for/mdl23-topnz-dev
 	draft-23 = push gerrit HEAD:refs/drafts/mdl23-topnz-dev
+    su = submodule update
 
 [push]
 	default = tracking
@@ -77,3 +78,7 @@
 	submodulesummary = 0
 [mergetool]
 	prompt = false
+[merge "ours"]
+	driver = true
+[diff "nodiff"]
+	command = /bin/true
