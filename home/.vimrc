@@ -159,6 +159,9 @@ set ruler
 " PHP syntax check
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
+"The following mapping allows you to simply hit <enter> on an element to
+"perform a search to find it.
+nnoremap <silent> <buffer> <cr> :PhpSearchContext<cr>
 
 " set file encodings
 set fileencodings=ucs-bom,utf-8,gbk,big5,latin1
