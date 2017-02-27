@@ -1,5 +1,5 @@
 [user]
-    email = chris.wharton@catalyst-eu.net
+    email = chriswharton@catalyst.net.nz
     name = Chris Wharton
 [color]
     ui = auto
@@ -39,9 +39,6 @@
     chp = cherry-pick
 	open = !sh ~/bin/open.sh
 	eu = edit-unmerged
-	push-26 = push gerrit HEAD:refs/for/mdl26-topnz-dev
-	push-23 = push gerrit HEAD:refs/for/mdl23-topnz-dev
-	draft-23 = push gerrit HEAD:refs/drafts/mdl23-topnz-dev
     su = submodule update
 
 [push]
@@ -60,8 +57,6 @@
 [branch]
     rebase = true
     autosetuprebase = always
-[achievement]
-#	upload = true
 [init]
 	templatedir = ~/.git_template
 [pager]

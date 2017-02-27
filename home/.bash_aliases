@@ -1,7 +1,5 @@
 # version bump alias from peterb for deployments
-alias versionbump='dch --distribution unstable --upstream --increment'
 alias s='sudo'
-alias cddd='cd ~/dev/deploy'
 alias ver="grep '\$release\|^\$TOTARA->version\|->version' version.php"
 alias ack="ack-grep"
 
