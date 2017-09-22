@@ -13,6 +13,7 @@
 	attributesfile = ~/.gitattributes
     logallrefupdates = true
 	eol = lf
+	autocrlf = input
 [alias]
     wtf = !git-wtf
     undo = git stash && git reset --hard
@@ -40,6 +41,7 @@
 	open = !sh ~/bin/open.sh
 	eu = edit-unmerged
     su = submodule update
+    addw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 
 [push]
 	default = tracking

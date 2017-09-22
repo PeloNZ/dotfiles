@@ -18,6 +18,11 @@ Plugin 'tpope/vim-fugitive'
 " Use vdebug remote debugging plugin - http://www.vim.org/scripts/script.php?script_id=4170
 Plugin 'joonty/vdebug'
 
+" Add auto indexer for tags https://bitbucket.org/dfrank/vim-indexer
+"Plugin 'pelonz/vim-dfutil'
+"Plugin 'pelonz/vimprj'
+"Plugin 'pelonz/vim-indexer'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -177,7 +182,7 @@ set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\
 set laststatus=2
 
 " look for etags
-set tags=tags;/
+set tags=./tags,tags;$HOME
 
 " set shortcut to toggle taglist plugin
 nnoremap <silent> <S-F9> :TlistToggle<CR>
