@@ -1,6 +1,5 @@
-# version bump alias from peterb for deployments
 alias s='sudo'
-alias ack="ack-grep"
+alias ack="~/bin/ack"
 
 # some more ls aliases
 alias ll='ls -alF'
