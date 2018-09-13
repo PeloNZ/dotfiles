@@ -1,6 +1,5 @@
 # version bump alias from peterb for deployments
 alias s='sudo'
-alias ver="grep '\$release\|^\$TOTARA->version\|->version' version.php"
 alias ack="ack-grep"
 
 # some more ls aliases

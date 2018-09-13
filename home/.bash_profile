@@ -23,16 +23,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -49,28 +39,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    function parse_git_dirty {
-        [[ $(__git_ps1) != "" ]] && [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-    }
-
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\t \[\033[01;31m\][\!]\[\033[01;32m\] (\u@\h) \[\033[01;34m\]\w\[\033[01;32m\]$(__git_ps1 " %s")\[\033[01;34m\]\[\033[01;31m\] >\[\033[00m\] '
-
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -83,11 +51,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
     alias rgrep='grep -rni --color=auto'
 fi
-
-
-# debianise a git repo
-export DEBFULLNAME='Chris Wharton'
-export DEBEMAIL='chrisw@catalyst.net.nz'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -105,17 +68,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# git bash completion script from git core
-if [ -f ~/.git-completion.bash ] && ! shopt -oq posix; then
-    source ~/.git-completion.bash
-fi
-
 export PERL_LOCAL_LIB_ROOT="/home/chrisw/perl5";
 export PERL_MB_OPT="--install_base /home/chrisw/perl5";
 export PERL_MM_OPT="INSTALL_BASE=/home/chrisw/perl5";
 export PERL5LIB="/home/chrisw/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/chrisw/perl5/lib/perl5";
 export PATH="/home/chrisw/perl5/bin:$PATH";
-#export PATH="$PATH:$HOME/dev/git-achievements"
 
 if [ -f "${HOME}/.bashrc.training" ]; then
     source "${HOME}/.bashrc.training"
@@ -124,3 +81,11 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# osx spec git color prompt
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+    source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+fi
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
