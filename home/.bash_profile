@@ -83,9 +83,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # osx spec git color prompt
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-    source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+if [ -f /usr/local/etc/bash_completion ]; then
+    source /usr/local/etc/bash_completion.d/git-completion.bash
+    source /usr/local/etc/bash_completion.d/git-prompt.sh
 fi
 GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
