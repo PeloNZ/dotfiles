@@ -89,3 +89,4 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+export PATH="/usr/local/opt/node@8/bin:$PATH"

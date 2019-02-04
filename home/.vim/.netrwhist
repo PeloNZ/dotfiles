@@ -1,7 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/chrisw/dev/aq/drupal/config/core'
 let g:netrw_dirhist_2='/home/chrisw/dev/aq/drupal/config/development'
 let g:netrw_dirhist_3='/home/chrisw/dev/aq/drupal/config/mailhog'
 let g:netrw_dirhist_4='/home/chrisw/dev/aq/drupal/config/production'
 let g:netrw_dirhist_5='/home/chrisw/dev/aq/drupal/config/simplesamlphp'
+let g:netrw_dirhist_6='/Users/chrisw/Downloads'
+let g:netrw_dirhist_7='/Users/chrisw/Downloads/CTS WS XML Schemas (xsd) V1.13'
+let g:netrw_dirhist_8='/Users/chrisw/Downloads'
+let g:netrw_dirhist_9='/Users/chrisw/Downloads/CTS WS XML Schemas (xsd) V1.13'
